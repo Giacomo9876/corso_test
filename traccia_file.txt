@@ -1,4 +1,5 @@
-Realizzare un mini-programma in Python che permetta di gestire un file di testo (dati.txt) con operazioni CRUD:
+Realizzare un mini-programma in Python che permetta di gestire un file di testo
+(dati.txt) con operazioni CRUD:
 
 Crea → scrivere nuovo contenuto dentro al file.
 
