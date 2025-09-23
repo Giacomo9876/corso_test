@@ -1,0 +1,11 @@
+Realizzare un mini-programma in Python che permetta di gestire un file di testo (dati.txt) con operazioni CRUD:
+
+Crea → scrivere nuovo contenuto dentro al file.
+
+Leggi → mostrare il contenuto del file a schermo.
+
+Aggiorna → aggiungere nuove righe al file senza cancellare le precedenti.
+
+Cancella → svuotare completamente il file.
+
+Aggiungere una modalità di menù con scelta 
