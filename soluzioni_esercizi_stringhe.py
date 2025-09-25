@@ -58,10 +58,10 @@ print("   Hello   ".lstrip())  # "Hello   "
 print("***Python***".strip("*"))  # Python
 
 # 4. Rimuovi "abc" da "abcHelloabc"
-print("abcHelloabc".strip("abc"))  # Hello  
+print("abcHelloabc".strip("abc"))  # Hello
 
 # 5. Rimuovi "xyz" da "xyzHello Worldxyz"
-print("xyzHello Worldxyz".strip("xyz"))  # Hello World 
+print("xyzHello Worldxyz".strip("xyz"))  # Hello World
 
 # -------------------------------------------------
 
@@ -124,13 +124,13 @@ print("".join(["A", "B", "C"]))  # ABC
 # 1. Dividi "hello@world.com" sul "@"
 prima, sep, dopo = "hello@world.com".partition("@")
 print(prima)  # hello
-print(sep)    # @
-print(dopo)   # world.com
+print(sep)  # @
+print(dopo)  # world.com
 
 # 2. Dividi "Python=Programming" sul "="
 prima, sep, dopo = "Python=Programming".partition("=")
 print(prima)  # Python
-print(dopo)   # Programming
+print(dopo)  # Programming
 
 # -------------------------------------------------
 
@@ -240,11 +240,11 @@ print("Nome\tCognome\tEtà".expandtabs(10))  # Nome      Cognome   Età
 # -------------------------------------------------
 
 # 1. Converti "Café" in bytes UTF-8
-bytes_data = "Café".encode('utf-8')
+bytes_data = "Café".encode("utf-8")
 print(bytes_data)  # b'Caf\xc3\xa9'
 
 # 2. Decodifica b'Python' in stringa
-stringa = b'Python'.decode('utf-8')
+stringa = b"Python".decode("utf-8")
 print(stringa)  # Python
 
 # -------------------------------------------------
@@ -257,7 +257,8 @@ print("hello world".translate(tabella))  # h2ll4 w4rld
 
 # 2. Rimuovi tutta la punteggiatura da "Hello, World!"
 import string
-rimuovi_punt = str.maketrans('', '', string.punctuation)
+
+rimuovi_punt = str.maketrans("", "", string.punctuation)
 print("Hello, World!".translate(rimuovi_punt))  # Hello World
 
 # -------------------------------------------------
@@ -283,9 +284,9 @@ print("ABCDEF"[::2])  # ACE
 
 password = "Python123"
 valida = (
-    len(password) >= 8 and
-    any(c.isalpha() for c in password) and
-    any(c.isdigit() for c in password)
+    len(password) >= 8
+    and any(c.isalpha() for c in password)
+    and any(c.isdigit() for c in password)
 )
 print(f"Password valida: {valida}")  # True
 
@@ -300,11 +301,10 @@ password = "Python123"
 # - nessuno spazio
 
 valida = (
-    len(password) >= 8 and
-    any(ch.isalpha() for ch in password) and
-    any(ch.isdigit() for ch in password) and
-    not any(ch.isspace() for ch in password)  # niente spazi
+    len(password) >= 8
+    and any(ch.isalpha() for ch in password)
+    and any(ch.isdigit() for ch in password)
+    and not any(ch.isspace() for ch in password)  # niente spazi
 )
 
 print(f"Password valida: {valida}")
-
