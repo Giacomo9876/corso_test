@@ -2,12 +2,14 @@
 
 FILE_NAME = "dati.txt"
 
+
 def crea():
     """Crea o sovrascrive il file con nuovo contenuto"""
     testo = input("Scrivi il contenuto da inserire nel file:\n")
     with open(FILE_NAME, "w") as f:
         f.write(testo + "\n")
     print("✅ File creato/sovrascritto con successo.")
+
 
 def leggi():
     """Legge e stampa il contenuto del file"""
@@ -22,6 +24,7 @@ def leggi():
     except FileNotFoundError:
         print("❌ Il file non esiste. Crea prima un file.")
 
+
 def aggiorna():
     """Aggiunge nuove righe al file senza cancellare le precedenti"""
     testo = input("Scrivi cosa vuoi aggiungere al file:\n")
@@ -29,11 +32,13 @@ def aggiorna():
         f.write(testo + "\n")
     print("✏️ Riga aggiunta con successo.")
 
+
 def cancella():
     """Svuota completamente il file"""
     with open(FILE_NAME, "w") as f:
         f.truncate(0)
     print("❌ File svuotato con successo.")
+
 
 def menu():
     while True:
@@ -59,6 +64,7 @@ def menu():
             break
         else:
             print("Opzione non valida.")
+
 
 if __name__ == "__main__":
     menu()
