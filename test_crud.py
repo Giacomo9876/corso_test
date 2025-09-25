@@ -2,6 +2,7 @@ import requests
 
 BASE_URL = "https://jsonplaceholder.typicode.com/posts"
 
+
 def get_posts():
     """Legge tutti i post"""
     response = requests.get(BASE_URL)
@@ -13,6 +14,7 @@ def get_posts():
     else:
         print("Errore nel recupero dei post.")
 
+
 def get_post(post_id):
     """Legge un post specifico"""
     response = requests.get(f"{BASE_URL}/{post_id}")
@@ -22,16 +24,18 @@ def get_post(post_id):
     else:
         print(f"Post con id {post_id} non trovato.")
 
+
 def create_post():
     """Crea un nuovo post"""
     new_post = {
         "title": "Corso Python",
         "body": "Sto imparando a usare le API con requests!",
-        "userId": 1
+        "userId": 1,
     }
     response = requests.post(BASE_URL, json=new_post)
     print("\n✅ Post creato:")
     print(response.json())
+
 
 def update_post(post_id):
     """Aggiorna un post con PUT"""
@@ -39,20 +43,20 @@ def update_post(post_id):
         "id": post_id,
         "title": "Titolo aggiornato",
         "body": "Contenuto aggiornato",
-        "userId": 1
+        "userId": 1,
     }
     response = requests.put(f"{BASE_URL}/{post_id}", json=update_data)
     print("\n✏️ Post aggiornato:")
     print(response.json())
 
+
 def patch_post(post_id):
     """Aggiorna solo un campo con PATCH"""
-    patch_data = {
-        "title": "Titolo aggiornato con PATCH"
-    }
+    patch_data = {"title": "Titolo aggiornato con PATCH"}
     response = requests.patch(f"{BASE_URL}/{post_id}", json=patch_data)
     print("\n🩹 Post parzialmente aggiornato:")
     print(response.json())
+
 
 def delete_post(post_id):
     """Cancella un post"""
@@ -61,6 +65,7 @@ def delete_post(post_id):
         print(f"\n❌ Post {post_id} eliminato con successo.")
     else:
         print(f"Errore durante l'eliminazione del post {post_id}.")
+
 
 def main():
     while True:
@@ -96,6 +101,7 @@ def main():
             break
         else:
             print("Scelta non valida.")
+
 
 if __name__ == "__main__":
     main()
